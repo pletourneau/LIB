@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import axios from "axios";
+import api from "../api";
 
 const AddUser = () => {
   const [name, setName] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios
+    api
       .post("/api/users/add", { name })
       .then((response) => {
         console.log(response.data);
